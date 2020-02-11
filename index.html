@@ -1,0 +1,99 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8b8b548cab670c82b13b31196a279a5b571e52a0
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>打地鼠</title>
+  <style>
+    /* body {
+      perspective: 1000px;
+    } */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .box {
+      width: 812px;
+      height: 487px;
+      background: url("./背景图.jpg") no-repeat;
+      background-size: 812px;
+      margin: 100px;
+      padding-top: 150px;
+      padding-left: 58px;
+      position: relative;
+    }
+
+    .box>div {
+      width: 100px;
+      height: 150px;
+      /* background-color: pink; */
+      float: left;
+      margin-right: 100px;
+      margin-bottom: 10px;
+      /* transform: rotateX(33deg); */
+    }
+
+    .box div:nth-of-type(4) {
+      margin-right: 0px;
+    }
+
+    .box div:nth-of-type(8) {
+      margin-right: 0px;
+    }
+
+    img {
+      vertical-align: middle;
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+    <div class="keng1"><img src="./1.png" alt=""></div>
+    <div class="keng2"><img src="./1.png" alt=""></div>
+    <div class="keng3"><img src="./1.png" alt=""></div>
+    <div class="keng4"><img src="./1.png" alt=""></div>
+    <div class="keng5"><img src="./1.png" alt=""></div>
+    <div class="keng6"><img src="./1.png" alt=""></div>
+    <div class="keng7"><img src="./1.png" alt=""></div>
+    <div class="keng8"><img src="./1.png" alt=""></div>
+  </div>
+  <script>
+    var alldiv = document.querySelector('.box');
+    var keng = document.querySelectorAll('.box img');
+
+    function chulai() {
+      var random = Math.floor(Math.random() * 8);
+      keng.forEach(item => {
+        item.setAttribute('src', './1.png');
+      })
+      keng[random].setAttribute('src', './地鼠.png');
+    }
+    var timid = setInterval(function () {
+      chulai();
+    }, 1500)
+    alldiv.onclick = function (e) {
+      if (e.target.nodeName == 'IMG') {
+        var src = e.target.getAttribute('src');
+        var dishusrc = './地鼠.png';
+        if (src == dishusrc) {
+          e.target.setAttribute('src', './地鼠死亡.png')
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>
